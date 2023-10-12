@@ -278,24 +278,25 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
         "Nassau", # capital
         [
             "sugar canes",
-            "cassava",
-            "taro",
+            "grapefruit",
+            "vegetales",
+            "bananas",
+            "tomatoes",
             "poultry",
-            "vegetables",
+            "tropical fruit",
+            "oranges",
             "coconuts",
-            "eggs",
-            "milk",
-            "ginger",
-            "sweet potatoes"
+            "mangoes"
         ],  # agricultural products
         [
             "tourism",
-            "sugar",
-            "clothing",
-            "copra",
-            "gold",
-            "silver",
-            "lumber"
+            "banking",
+            "oil bunkering",
+            "maritime",
+            "transshipment",
+            "salt",
+            "aragonite",
+            "pharmaceuticals"
         ],  # industries
     ),
 ]
