@@ -18,9 +18,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "uranium"
         ],  # natural resources
         339665118, # population as of 2023
-        "English", # primary language
+        "english", # primary language
         "republic", # type of government
-        "Washington, DC", # capital
+        "washington dc", # capital
         [
             "maize",
             "milk",
@@ -59,9 +59,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "hydropower"
         ],  # natural resources
         17980803, # population as of 2023
-        "Spanish", # primary language
+        "spanish", # primary language
         "republic", # type of government
-        "Guatemala City", # capital
+        "guatemala city", # capital
         [
             "sugar cane",
             "bananas",
@@ -102,9 +102,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "sand"
         ],  # natural resources
         9043387, # population as of 2023
-        "Hebrew", # primary language
+        "hebrew", # primary language
         "democracy", # type of government
-        "Jerusalem", # capital
+        "jerusalem", # capital
         [
             "milk",
             "potatoes",
@@ -143,9 +143,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "dolomite"
         ],  # natural resources
         5323991, # population as of 2023
-        "English", # primary language
+        "english", # primary language
         "republic", # type of government
-        "Dublin", # capital
+        "dublin", # capital
         [
             "milk",
             "barley",
@@ -191,9 +191,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "arable land"
         ],  # natural resources
         1399179585, # population as of 2023
-        "Hindi", # primary language
+        "hindi", # primary language
         "republic", # type of government
-        "New Delhi", # capital
+        "new delhi", # capital
         [
             "sugar canes",
             "rice",
@@ -235,9 +235,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "hydropower"
         ],  # natural resources
         947760, # population as of 2023
-        "iTaukei", # primary language
+        "itaukei", # primary language
         "republic", # type of government
-        "Suva", # capital
+        "suva", # capital
         [
             "sugar canes",
             "cassava",
@@ -273,9 +273,9 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "arable land"
         ],  # natural resources
         358508, # population as of 2023
-        "English", # primary language
+        "english", # primary language
         "demmocracy", # type of government
-        "Nassau", # capital
+        "nassau", # capital
         [
             "sugar canes",
             "grapefruit",
