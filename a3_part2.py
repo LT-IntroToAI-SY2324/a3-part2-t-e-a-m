@@ -2,168 +2,260 @@ from countries import country_db
 from match import match
 from typing import List, Tuple, Callable, Any
 
-def get_title(movie: Tuple[str, str, int, List[str]]) -> str:
-    return movie[0]
+def get_name(country: Tuple[str, str, int, List[str]]) -> str:
+    return country[0]
 
-def get_director(movie: Tuple[str, str, int, List[str]]) -> str:
-    return movie[1]
+def get_continent(country: Tuple[str, str, int, List[str]]) -> str:
+    return country[1]
 
-def get_year(movie: Tuple[str, str, int, List[str]]) -> int:
-    return movie[2]
+# yof = year of founding
+def get_yof(country: Tuple[str, str, int, List[str]]) -> int:
+    return country[2]
 
-def get_actors(movie: Tuple[str, str, int, List[str]]) -> List[str]:
-    return movie[3]
+def get_numofstates(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[3]
 
-def title_by_year(matches: List[str]) -> List[str]:
-    """Finds all movies made in the passed in year
+def get_area(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[4]
 
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
+def get_naturalresources(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[5]
 
-    Returns:
-        a list of movie titles made in the passed in year
-    """
+def get_population(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[6]
+
+def get_language(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[7]
+
+def get_governmenttype(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[8]
+
+def get_capital(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[9]
+
+def get_agriproducts(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[10]
+
+def get_industries(country: Tuple[str, str, int, List[str]]) -> List[str]:
+    return country[11]
+
+def name_by_yof(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if int(matches[0]) == get_year(movie):
-         results.append(get_title(movie))
+    for country in country_db:
+        if int(matches[0]) == get_yof(country):
+         results.append(get_name(country))
     return results
 
 
-def title_by_year_range(matches: List[str]) -> List[str]:
-    """Finds all movies made in the passed in year range
-
-    Args:
-        matches - a list of 2 strings, the year beginning the range and the year ending
-            the range. For example, to get movies from 1991-1994 matches would look like
-            this - ["1991", "1994"] Note that these years are passed as strings and
-            should be converted to ints.
-
-    Returns:
-        a list of movie titles made during those years, inclusive (meaning if you pass
-        in ["1991", "1994"] you will get movies made in 1991, 1992, 1993 & 1994)
-    """
+def name_by_yof_range(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if int(matches[0]) <= get_year(movie) <= int(matches[1]):
-         results.append(get_title(movie))
+    for country in country_db:
+        if int(matches[0]) <= get_yof(country) <= int(matches[1]):
+         results.append(get_name(country))
     return results
 
 
-def title_before_year(matches: List[str]) -> List[str]:
-    """Finds all movies made before the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made before the passed in year, exclusive (meaning if you
-        pass in 1992 you won't get any movies made that year, only before)
-    """
+def name_before_yof(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if int(matches[0]) > get_year(movie):
-         results.append(get_title(movie))
+    for country in country_db:
+        if int(matches[0]) > get_yof(country):
+         results.append(get_name(country))
     return results
 
 
-def title_after_year(matches: List[str]) -> List[str]:
-    """Finds all movies made after the passed in year
-
-    Args:
-        matches - a list of 1 string, just the year. Note that this year is passed as a
-            string and should be converted to an int
-
-    Returns:
-        a list of movie titles made after the passed in year, exclusive (meaning if you
-        pass in 1992 you won't get any movies made that year, only after)
-    """
+def name_after_yof(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if int(matches[0]) < get_year(movie):
-         results.append(get_title(movie))
+    for country in country_db:
+        if int(matches[0]) < get_yof(country):
+         results.append(get_name(country))
     return results
 
 
-def director_by_title(matches: List[str]) -> List[str]:
-    """Finds director of movie based on title
-
-    Args:
-        matches - a list of 1 string, just the title
-
-    Returns:
-        a list of 1 string, the director of the movie
-    """
+def continent_by_name(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if matches[0] == get_title(movie):
-         results.append(get_director(movie))
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_continent(country))
     return results
 
 
-def title_by_director(matches: List[str]) -> List[str]:
-    """Finds movies directed by the passed in director
-
-    Args:
-        matches - a list of 1 string, just the director
-
-    Returns:
-        a list of movies titles directed by the passed in director
-    """
+def yof_by_name(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if matches[0] == get_director(movie):
-         results.append(get_title(movie))
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_yof(country))
     return results
 
 
-def actors_by_title(matches: List[str]) -> List[str]:
-    """Finds actors who acted in the passed in movie title
-
-    Args:
-        matches - a list of 1 string, just the movie title
-
-    Returns:
-        a list of actors who acted in the passed in title
-    """
+def numofstates_by_name(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if matches[0] == get_title(movie):
-         results = (get_actors(movie))
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results = (get_numofstates(country))
+    results = (f"{results} states")
     return results
 
 
-def year_by_title(matches: List[str]) -> List[int]:
-    """Finds year of passed in movie title
-
-    Args:
-        matches - a list of 1 string, just the movie title
-
-    Returns:
-        a list of one item (an int), the year that the movie was made
-    """
+def area_by_name(matches: List[str]) -> List[int]:
     results = []
-    for movie in movie_db:
-        if matches[0] == get_title(movie):
-         results.append(get_year(movie))
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_area(country))
+    results = (f"{results} sq km")
     return results
 
-
-def title_by_actor(matches: List[str]) -> List[str]:
-    """Finds titles of all movies that the given actor was in
-
-    Args:
-        matches - a list of 1 string, just the actor
-
-    Returns:
-        a list of movie titles that the actor acted in
-    """
+def naturalresources_by_name(matches: List[str]) -> List[str]:
     results = []
-    for movie in movie_db:
-        if matches[0] in get_actors(movie):
-         results.append(get_title(movie))
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_naturalresources(country))
+    return results
+
+def population_by_name(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_population(country))
+    return results
+
+def language_by_name(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_language(country))
+    return results
+
+def govtype_by_name(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_governmenttype(country))
+    return results
+
+def capital_by_name(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_capital(country))
+    return results
+
+def agriproducts_by_name(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_agriproducts(country))
+    return results
+
+def industries_by_name(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_name(country):
+         results.append(get_industries(country))
+    return results
+
+def name_by_continent(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_continent(country):
+         results.append(get_name(country))
+    return results
+
+def naturalresources_by_continent(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_continent(country):
+         results.append(get_naturalresources(country))
+    return results
+
+def language_by_continent(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_continent(country):
+         results.append(get_language(country))
+    return results
+
+def name_by_numofstates_range(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if int(matches[0]) <= get_numofstates(country) <= int(matches[1]):
+         results.append(get_name(country))
+    return results
+
+def name_by_area_range(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if int(matches[0]) <= get_area(country) <= int(matches[1]):
+         results.append(get_name(country))
+    return results
+
+def name_by_naturalresource(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] in get_naturalresources(country):
+         results.append(get_name(country))
+    return results
+
+def continent_by_naturalresource(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] in get_naturalresources(country):
+         results.append(get_continent(country))
+    return results
+
+def name_by_language(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_language(country):
+         results.append(get_name(country))
+    return results
+
+def continent_by_language(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_language(country):
+         results.append(get_continent(country))
+    return results
+
+def name_by_govtype(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_governmenttype(country):
+         results.append(get_name(country))
+    return results
+
+def name_by_capital(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] == get_capital(country):
+         results.append(get_name(country))
+    return results
+
+def name_by_agriproducts(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] in get_agriproducts(country):
+         results.append(get_name(country))
+    return results
+
+def continent_by_agriproducts(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] in get_agriproducts(country):
+         results.append(get_continent(country))
+    return results
+
+def name_by_industry(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] in get_industries(country):
+         results.append(get_name(country))
+    return results
+
+def continent_by_industry(matches: List[str]) -> List[str]:
+    results = []
+    for country in country_db:
+        if matches[0] in get_industries(country):
+         results.append(get_continent(country))
     return results
 
 
@@ -171,17 +263,44 @@ def bye_action(dummy: List[str]) -> None:
     raise KeyboardInterrupt
 
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("what movies were made in _"), title_by_year),
-    (str.split("what movies were made between _ and _"), title_by_year_range),
-    (str.split("what movies were made before _"), title_before_year),
-    (str.split("what movies were made after _"), title_after_year),
-    (str.split("who directed %"), director_by_title),
-    (str.split("who was the director of %"), director_by_title),
-    (str.split("what movies were directed by %"), title_by_director),
-    (str.split("who acted in %"), actors_by_title),
-    (str.split("who are the actors in %"), actors_by_title),
-    (str.split("when was % made"), year_by_title),
-    (str.split("in what movies did % appear"), title_by_actor),
+    (str.split("what countries were founded in _"), name_by_yof),
+    (str.split("what countries gained independence in _"), name_by_yof),
+    (str.split("what countries were founded between _ and _"), name_by_yof_range),
+    (str.split("what countries gained independence between _ and _"), name_by_yof_range),
+    (str.split("what countries were founded before _"), name_before_yof),
+    (str.split("what countries gained independence before _"), name_before_yof),
+    (str.split("what countries were founded after _"), name_after_yof),
+    (str.split("what countries gained independence after _"), name_after_yof),
+    (str.split("what continent is % located"), continent_by_name),
+    (str.split("when was % founded"), yof_by_name),
+    (str.split("when did % gain independence"), yof_by_name),
+    (str.split("how many states does % have"), numofstates_by_name),
+    (str.split("what is the area of % in square kilometers"), area_by_name),
+    (str.split("what is the area of %"), area_by_name),
+    (str.split("what are the natural resources of the country of %"), naturalresources_by_name),
+    (str.split("what is the population of %"), population_by_name),
+    (str.split("what is the language of %"), language_by_name),
+    (str.split("what do people speak in %"), language_by_name),
+    (str.split("what kind of government is %"), govtype_by_name),
+    (str.split("what is the capital of %"), capital_by_name),
+    (str.split("what does % produce"), agriproducts_by_name),
+    (str.split("what industries are in %"), industries_by_name),
+    (str.split("what are the industries of %"), industries_by_name),
+    (str.split("what countries are located in %"), name_by_continent),
+    (str.split("what are the natural resources in the entire continent of %"), naturalresources_by_continent),
+    (str.split("what languages do people speak in %"), language_by_continent),
+    (str.split("what countries have between _ and _ states"), name_by_numofstates_range),
+    (str.split("what countries have an area between _ and _ square kilometers"), name_by_area_range),
+    (str.split("what countries have %"), name_by_naturalresource),
+    (str.split("what continents have %"), continent_by_naturalresource),
+    (str.split("what countries speak _"), name_by_language),
+    (str.split("what continents speak _"), continent_by_language),
+    (str.split("what countries are a _"), name_by_govtype),
+    (str.split("what is % the capital of"), name_by_capital),
+    (str.split("what countries are % produced"), name_by_agriproducts),
+    (str.split("what continents are % produced"), continent_by_agriproducts),
+    (str.split("what countries are part of the % industry"), name_by_industry),
+    (str.split("what continents are part of the % industry"), continent_by_industry),
     (["bye"], bye_action),
 ]
 
@@ -211,7 +330,7 @@ def query_loop() -> None:
     """The simple query loop. The try/except structure is to catch Ctrl-C or Ctrl-D
     characters and exit gracefully.
     """
-    print("Welcome to the movie database!\n")
+    print("Welcome to the country database!\n")
     while True:
         try:
             print()
@@ -227,59 +346,3 @@ def query_loop() -> None:
 
 query_loop()
 
-if __name__ == "__main__":
-    assert isinstance(title_by_year(["1974"]), list), "title_by_year not returning a list"
-    assert isinstance(title_by_year_range(["1970", "1972"]), list), "title_by_year_range not returning a list"
-    assert isinstance(title_before_year(["1950"]), list), "title_before_year not returning a list"
-    assert isinstance(title_after_year(["1990"]), list), "title_after_year not returning a list"
-    assert isinstance(director_by_title(["jaws"]), list), "director_by_title not returning a list"
-    assert isinstance(title_by_director(["steven spielberg"]), list), "title_by_director not returning a list"
-    assert isinstance(actors_by_title(["jaws"]), list), "actors_by_title not returning a list"
-    assert isinstance(year_by_title(["jaws"]), list), "year_by_title not returning a list"
-    assert isinstance(title_by_actor(["orson welles"]), list), "title_by_actor not returning a list"
-    
-    assert sorted(title_by_year(["1974"])) == sorted(
-        ["amarcord", "chinatown"]
-    ), "failed title_by_year test"
-    assert sorted(title_by_year_range(["1970", "1972"])) == sorted(
-        ["the godfather", "johnny got his gun"]
-    ), "failed title_by_year_range test"
-    assert sorted(title_before_year(["1950"])) == sorted(
-        ["casablanca", "citizen kane", "gone with the wind", "metropolis"]
-    ), "failed title_before_year test"
-    assert sorted(title_after_year(["1990"])) == sorted(
-        ["boyz n the hood", "dead again", "the crying game", "flirting", "malcolm x", "the super mario bros movie", "curious george"]
-    ), "failed title_after_year test"
-    assert sorted(director_by_title(["jaws"])) == sorted(
-        ["steven spielberg"]
-    ), "failed director_by_title test"
-    assert sorted(title_by_director(["steven spielberg"])) == sorted(
-        ["jaws"]
-    ), "failed title_by_director test"
-    assert sorted(actors_by_title(["jaws"])) == sorted(
-        [
-            "roy scheider",
-            "robert shaw",
-            "richard dreyfuss",
-            "lorraine gary",
-            "murray hamilton",
-        ]
-    ), "failed actors_by_title test"
-    assert sorted(actors_by_title(["movie not in database"])) == [], "failed actors_by_title not in database test"
-    assert sorted(year_by_title(["jaws"])) == sorted(
-        [1975]
-    ), "failed year_by_title test"
-    assert sorted(title_by_actor(["orson welles"])) == sorted(
-        ["citizen kane", "othello"]
-    ), "failed title_by_actor test"
-    assert sorted(search_pa_list(["hi", "there"])) == sorted(
-        ["I don't understand"]
-    ), "failed search_pa_list test 1"
-    assert sorted(search_pa_list(["who", "directed", "jaws"])) == sorted(
-        ["steven spielberg"]
-    ), "failed search_pa_list test 2"
-    assert sorted(
-        search_pa_list(["what", "movies", "were", "made", "in", "2020"])
-    ) == sorted(["No answers"]), "failed search_pa_list test 3"
-
-    # print("All tests passed!")
