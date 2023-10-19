@@ -299,4 +299,50 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
             "pharmaceuticals"
         ],  # industries
     ),
+    (
+        "uzbekistan",  # country name
+        "asia",  # continent
+        1991,  # year of founding
+        12, # number of states
+        447400, # area measured in square kilometers
+        [
+            "natural gas",
+            "petroleum",
+            "coal",
+            "gold",
+            "uranium",
+            "silver",
+            "copper",
+            "lead",
+            "zinc",
+            "tungsten",
+            "molybdenum"
+        ],  # natural resources
+        31360836, # population as of 2023
+        "uzbek", # primary language
+        "republic", # type of government
+        "tashkent", # capital
+        [
+            "sugar canes",
+            "grapefruit",
+            "vegetales",
+            "bananas",
+            "tomatoes",
+            "poultry",
+            "tropical fruit",
+            "oranges",
+            "coconuts",
+            "mangoes"
+        ],  # agricultural products
+        [
+            "tourism",
+            "banking",
+            "oil bunkering",
+            "maritime",
+            "transshipment",
+            "salt",
+            "aragonite",
+            "pharmaceuticals"
+        ],  # industries
+    ),
 ]
