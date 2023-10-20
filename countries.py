@@ -323,26 +323,75 @@ country_db: List[Tuple[str, str, int, List[str]]] = [
         "republic", # type of government
         "tashkent", # capital
         [
-            "sugar canes",
-            "grapefruit",
-            "vegetales",
-            "bananas",
+            "milk",
+            "wheat",
+            "potatoes",
+            "carrots",
+            "cotton",
             "tomatoes",
-            "poultry",
-            "tropical fruit",
-            "oranges",
-            "coconuts",
-            "mangoes"
+            "vegetables",
+            "grapes",
+            "onions",
+            "watermelons"
         ],  # agricultural products
         [
-            "tourism",
-            "banking",
-            "oil bunkering",
-            "maritime",
-            "transshipment",
+            "textiles",
+            "food products",
+            "machine building",
+            "metallurgy",
+            "mining",
+            "hydrocarbon extraction",
+            "chemicals"
+        ],  # industries
+    ),
+    (
+        "serbia",  # country name
+        "europe",  # continent
+        2006,  # year of founding
+        2, # number of states
+        77474, # area measured in square kilometers
+        [
+            "oil",
+            "gas",
+            "coal",
+            "iron ore",
+            "copper",
+            "zinc",
+            "antimony",
+            "chromite",
+            "gold",
+            "silver",
+            "magnesium",
+            "pyrite",
+            "limestone",
+            "marble",
             "salt",
-            "aragonite",
-            "pharmaceuticals"
+            "arable land"
+        ],  # natural resources
+        6693375, # population as of 2023
+        "serbian", # primary language
+        "republic", # type of government
+        "belgrade", # capital
+        [
+            "milk",
+            "wheat",
+            "potatoes",
+            "carrots",
+            "cotton",
+            "tomatoes",
+            "vegetables",
+            "grapes",
+            "onions",
+            "watermelons"
+        ],  # agricultural products
+        [
+            "textiles",
+            "food products",
+            "machine building",
+            "metallurgy",
+            "mining",
+            "hydrocarbon extraction",
+            "chemicals"
         ],  # industries
     ),
 ]
